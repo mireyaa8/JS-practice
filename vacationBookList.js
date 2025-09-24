@@ -92,3 +92,37 @@ function fishingBoat(budget, season, fishermens) {
 }
 
 fishingBoat(3000, "Summer", 11);
+
+function journey(budget, season) {
+  let destination = "";
+  if (budget <= 100) {
+    destination = "Bulgaria";
+    if (season == "summer") {
+      budget *= 0.3;
+    } else if (season == "winter") {
+      budget *= 0.7;
+    }
+  } else if (budget <= 1000) {
+    destination = "Balkans";
+    if (season == "summer") {
+      budget *= 0.4;
+    } else if (season == "winter") {
+      budget *= 0.8;
+    }
+  } else {
+    destination = "Europe";
+    budget *= 0.9;
+  }
+  let place = "";
+  if (destination == "Europe") {
+    place = "Hotel";
+  } else {
+    if (season == "summer") {
+      place = "Camp";
+    } else if (season == "winter") {
+      place = "Hotel";
+    }
+  }
+  console.log(`Somewhere in ${destination}`);
+  console.log(`${place} - ${budget.toFixed(2)}`);
+}
