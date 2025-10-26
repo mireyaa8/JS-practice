@@ -110,3 +110,48 @@ function lowerOrUpper(char) {
     console.log("lower-case");
   }
 }
+function gladiatorExpenses(arg1, arg2, arg3, arg4, arg5) {
+  let totalSpentMoney = 0;
+  let lostFightCount = Number(arg1);
+  let helmetPrice = Number(arg2);
+  let swordPrice = Number(arg3);
+  let shieldPrice = Number(arg4);
+  let armorPrice = Number(arg5);
+  let shieldBrokenCount = 0;
+
+  for (let fight = 1; fight <= lostFightCount; fight++) {
+    let helmetBroke = false;
+    let swordBroke = false;
+    if (fight % 2 === 0) {
+      totalSpentMoney += helmetPrice;
+      helmetBroke = true;
+    }
+    if (fight % 3 === 0) {
+      totalSpentMoney += swordPrice;
+      swordBroke = true;
+    }
+    if (helmetBroke && swordBroke) {
+      totalSpentMoney += shieldPrice;
+      shieldBrokenCount++;
+      if (shieldBrokenCount % 2 === 0) {
+        totalSpentMoney += armorPrice;
+      }
+    }
+  }
+
+  console.log(`Gladiator expenses: ${totalSpentMoney.toFixed(2)} aureus`);
+}
+function spiceMustFlow(number) {
+  let initialYeald = number;
+  let totalYeald = 0;
+  let days = 0;
+  for (let i = number; i >= 100; i -= 10) {
+    totalYeald += i - 26;
+    days++;
+  }
+  if (totalYeald !== 0) {
+    totalYeald -= 26;
+  }
+  console.log(days);
+  console.log(totalYeald);
+}
