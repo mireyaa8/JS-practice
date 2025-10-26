@@ -80,21 +80,45 @@ function smallestNumber(input) {
   console.log(smallestNum);
 }
 function multiplicationTable(n) {
-  for (let x = 1; x <= 10; x++) {
-    for (let y = 1; y <= 10; y++) {
-      let product = x * y;
-      console.log(`${x} * ${y} = ${product}`)
-    }
+  for (let i = 1; i <= 10; i++) {
+    let product = n * i;
+    console.log(`${n} * ${i} = ${product}`);
   }
 }
-function sumTwoNumbers(start, end, magicNum){
+function sumTwoNumbers(start, end, magicNum) {
   let sumOfNumComb = 0;
-  for(let i = start;i<end;i++){
-    for(let j = start;j<end;i++){
+  let isFound = false;
+  for (let i = start; i <= end; i++) {
+    for (let j = start; j <= end; j++) {
       sumOfNumComb++;
-      if((j+i)>magicNum){
-        
+      if (i + j === magicNum) {
+        console.log(
+          `Combination N:${sumOfNumComb} (${i} + ${j} = ${magicNum})`
+        );
+        isFound = true;
+        return;
       }
     }
   }
+  if (!isFound) {
+    console.log(`${sumOfNumComb} combinations - neither equals ${magicNum}`);
+  }
+}
+sumTwoNumbers(1, 10, 5);
+
+function leapYears(input) {
+  for (let year = input[0]; year <= input[1]; year++) {
+    if (input[year] % 4 === 0) {
+      console.log(year);
+    }
+  }
+}
+leapYears(1908, 1919);
+
+function factorial(n) {
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    result *= i;
+  }
+  console.log(result);
 }
