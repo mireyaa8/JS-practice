@@ -67,3 +67,53 @@ function passwordValidator(password) {
     isValid = false;
   }
 }
+function NxNMatrix(number) {
+  for (let i = 0; i < number; i++) {
+    console.log(number.toString().repeat(number).split("").join(" "));
+  }
+}
+function perfectNumber(number) {
+  let sum = 0;
+  if (number <= 0) {
+    return;
+  }
+  for (let i = 0; i <= number / 2; i++) {
+    if (number % i === 0) {
+      sum += i;
+    }
+  }
+  if (sum === number) {
+    console.log("We have a perfect number!");
+  } else {
+    console.log("It's not so perfect.");
+  }
+}
+function loadingBar(number) {
+  let full = "%";
+  let empty = ".";
+
+  if (number != 100) {
+    console.log(
+      `${number}% [${full.repeat(number / 10)}${empty.repeat(
+        10 - number / 10
+      )}]`
+    );
+    console.log("Still loading...");
+  } else {
+    console.log("100% Complete!");
+    console.log("[%%%%%%%%%%]");
+  }
+}
+
+function factorialDivision(firstNumber, secondNumber) {
+  let firstFactorial = firstNumber;
+  let secondFactorial = secondNumber;
+  for (let i = firstNumber - 1; i > 0; i--) {
+    firstFactorial = firstFactorial * i;
+  }
+  for (let j = secondNumber - 1; j > 0; j--) {
+    secondFactorial = secondFactorial * j;
+  }
+  let sum = firstFactorial / secondFactorial;
+  console.log(sum.toFixed(2));
+}
