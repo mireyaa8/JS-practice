@@ -45,7 +45,7 @@ function movie(input) {
     `The movie tonight is ${bestMovie} collected points: ${bestPoints}.`
   );
 }
-movie(["Amadeus", "The Hurt Locker", "The Godfather", "Se7en", "STOP"]);
+// movie(["Amadeus", "The Hurt Locker", "The Godfather", "Se7en", "STOP"]);
 function movie(input) {
   let bestMovie = "";
   let bestSum = 0;
